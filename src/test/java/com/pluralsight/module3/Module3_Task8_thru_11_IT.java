@@ -62,7 +62,7 @@ public class Module3_Task8_thru_11_IT extends Mockito{
 		response = mock(HttpServletResponse.class);
 		tempBook = new Book(tempID, tempTitle, tempAuthor, tempPrice);
 
-		when(request.getPathInfo()).thenReturn("/update");
+		when(request.getPathInfo()).thenReturn("/updateBook");
 		when(request.getParameter("id")).thenReturn(tempIDStr);
 		when(request.getParameter("booktitle")).thenReturn(tempTitle);
 		when(request.getParameter("bookauthor")).thenReturn(tempAuthor);
@@ -94,7 +94,7 @@ public class Module3_Task8_thru_11_IT extends Mockito{
          called_getId = true;
        } catch (Throwable e) {}
 
-       errorMsg = "After action \"" + "/update" +
+       errorMsg = "After action \"" + "/updateBook" +
                          "\", did not call getParameter(\"id\").";
        assertTrue(errorMsg, called_getId);
     }
@@ -113,13 +113,13 @@ public class Module3_Task8_thru_11_IT extends Mockito{
          called_getPrice = true;
        } catch (Throwable e) {}
 
-       errorMsg = "After action \"" + "/update" +
+       errorMsg = "After action \"" + "/updateBook" +
                          "\", did not call getParameter(\"booktitle\").";
        assertTrue(errorMsg, called_getTitle);
-       errorMsg = "After action \"" + "/update" +
+       errorMsg = "After action \"" + "/updateBook" +
                          "\", did not call getParameter(\"bookauthor\").";
        assertTrue(errorMsg, called_getAuthor);
-			 errorMsg = "After action \"" + "/update" +
+			 errorMsg = "After action \"" + "/updateBook" +
                          "\", did not call getParameter(\"bookprice\").";
        assertTrue(errorMsg, called_getPrice);
     }
@@ -147,7 +147,7 @@ public class Module3_Task8_thru_11_IT extends Mockito{
 			for (Invocation anInvocation : invocations) {
 				methodsCalled.add(anInvocation.getMethod().getName());
 			}
-			errorMsg = "After action \"" + "/update" +
+			errorMsg = "After action \"" + "/updateBook" +
 												"\", did not updateBook(newBookObject).";
 			assertTrue(errorMsg, methodsCalled.contains("updateBook"));
     }

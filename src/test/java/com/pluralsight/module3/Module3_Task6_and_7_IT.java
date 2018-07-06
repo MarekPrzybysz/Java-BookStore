@@ -53,7 +53,7 @@ public class Module3_Task6_and_7_IT extends Mockito{
 			request = mock(HttpServletRequest.class);
 			response = mock(HttpServletResponse.class);
 			try {
-				when(request.getPathInfo()).thenReturn("/update");
+				when(request.getPathInfo()).thenReturn("/updateBook");
 				//PowerMockito.doNothing().when(controllerServlet, "updateBook", request, response);
 				when(request.getParameter("id")).thenReturn(tempID);
 			} catch (MethodNotFoundException e) {}
@@ -81,7 +81,7 @@ public class Module3_Task6_and_7_IT extends Mockito{
 				called_updateBook = true;
 		  } catch (Throwable e) {}
 
-			errorMsg = "After action \"" + "/update" +
+			errorMsg = "After action \"" + "/updateBook" +
 												"\", did not call updateBook().";
 			assertTrue(errorMsg, called_updateBook);
     }
